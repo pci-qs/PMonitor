@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
 
-namespace PMonitor.Example.Web
+namespace PMonitor.BoehmTrader.Web
 {
     public class MvcApplication : System.Web.HttpApplication
     {

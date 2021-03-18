@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading;
 using PMonitor.Core;
 
-namespace PMonitor.Example.CustomImpl
+namespace PMonitor.BoehmTrader.CustomImpl
 {
     class Program
     {

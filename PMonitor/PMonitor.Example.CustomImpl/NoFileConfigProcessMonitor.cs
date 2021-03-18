@@ -1,7 +1,7 @@
 ﻿using PMonitor.Core;
 using PMonitor.Core.Windows;
 
-namespace PMonitor.Example.CustomImpl
+namespace PMonitor.BoehmTrader.CustomImpl
 {
     //This class will get the name and firendly name of the Notepad process 
     //programatically. There is no need to have an App.config file like in the 

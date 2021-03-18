@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.24720.0
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31005.135
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PMonitor.Core", "PMonitor.Core\PMonitor.Core.csproj", "{E6536217-0A1A-4930-9C17-73BD0BDC8AD5}"
 EndProject
@@ -9,7 +9,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PMonitor.Test", "PMonitor.T
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PMonitor.DemoProcess1", "PMonitor.DemoProcess1\PMonitor.DemoProcess1.csproj", "{976EA3EB-7773-40D4-8525-627C1FD6350C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PMonitor.Example.Console", "PMonitor.Example.Console\PMonitor.Example.Console.csproj", "{ECDE96AD-1C46-4868-8186-DC5C2A0B5DB0}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PMonitor.BoehmTrader.Console", "PMonitor.Example.Console\PMonitor.BoehmTrader.Console.csproj", "{ECDE96AD-1C46-4868-8186-DC5C2A0B5DB0}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PMonitor.Example.Web", "PMonitor.Example.Web\PMonitor.Example.Web.csproj", "{6F33C8AB-E050-4FC1-93FF-FD884AC46D3A}"
 EndProject
@@ -48,5 +48,8 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {CFA3A69E-D3CE-4599-9399-3C1689D61D17}
 	EndGlobalSection
 EndGlobal

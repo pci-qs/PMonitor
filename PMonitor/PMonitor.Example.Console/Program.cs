@@ -5,7 +5,7 @@ using System.Linq;
 using System.Threading;
 using PMonitor.Core;
 
-namespace PMonitor.Example.Console
+namespace PMonitor.BoehmTrader.Console
 {
     class Program
     {

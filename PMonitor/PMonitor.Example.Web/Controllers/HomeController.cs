@@ -2,7 +2,7 @@
 using System.Web.Mvc;
 using PMonitor.Core;
 
-namespace PMonitor.Example.Web.Controllers
+namespace PMonitor.BoehmTrader.Web.Controllers
 {
     public class HomeController : Controller
     {
