@@ -79,8 +79,8 @@
                             HorizontalAlignment="Right"
                             Command="{Binding AuthInfoSaveCommand}"/>
 
-                </Grid>
-            </Expander>
+                </Grid>                
+            </Expander>            
             <Grid Grid.Column="1">
                 <Grid.RowDefinitions>
                     <RowDefinition/>
@@ -92,7 +92,19 @@
                 <Button Content="{Binding StartText}" Grid.Row="1"
                     Margin="10" Height="30" Width="60"
                     Command="{Binding StartMonitoringCommand}"/>
-            </Grid>                      
+            </Grid>
+            <Grid.Style>
+                <Style TargetType="Grid">
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding IsDemo}" Value="true">
+                            <Setter Property="Background" Value="Lime"/>
+                        </DataTrigger>
+                        <DataTrigger Binding="{Binding IsDemo}" Value="false">
+                            <Setter Property="Background" Value="Red"/>
+                        </DataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </Grid.Style>
         </Grid>
         <ListView Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2"
                   Margin="10"

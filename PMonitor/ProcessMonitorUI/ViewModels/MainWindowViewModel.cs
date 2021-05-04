@@ -22,6 +22,19 @@ namespace ProcessMonitorUI.ViewModels
     {
         #region Properties
         public AuthorizationData AuthorizationData { get; set; }
+        private bool _isDemo = true;
+        public bool IsDemo
+        {
+            get => _isDemo;
+            set
+            {
+                if (_isDemo !=value)
+                {
+                    _isDemo = value;
+                    OnPropertyChanged(nameof(IsDemo));
+                }
+            }
+        }
         private string _startText;
         public string StartText
         {
@@ -82,14 +95,25 @@ namespace ProcessMonitorUI.ViewModels
             using (var dialog = new FolderBrowserDialog())
             {
                 DialogResult result = dialog.ShowDialog();
-                if (result== DialogResult.OK)
+                if (result == DialogResult.OK)
                 {
                     _infoFilesLocation = dialog.SelectedPath;
                     AddLog("Info file Location changed as " + _infoFilesLocation);
                     UpdateAuthorizationData();
                 }
             }
+
+            CheckIfIsDeom();
+
             SaveSettings();
+        }
+
+        private void CheckIfIsDeom()
+        {
+            if (_infoFilesLocation.ToLower().Contains("demo"))
+                IsDemo = true;
+            else
+                IsDemo = false;
         }
 
         private bool UpdateAuthorizationData()
@@ -191,6 +215,8 @@ namespace ProcessMonitorUI.ViewModels
             _infoFilesLocation = Properties.Settings.Default.InfoFilesLocation;
             _authInfoFilename = Properties.Settings.Default.AuthInfoFilename;
             _dbFilename = Properties.Settings.Default.DbFilename;
+
+            CheckIfIsDeom();
         }
         private void SaveSettings()
         {
