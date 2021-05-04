@@ -8,21 +8,66 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-
-namespace ProcessMonitorUI.Properties
-{
+namespace ProcessMonitorUI.Properties {
+    
+    
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "11.0.0.0")]
-    internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase
-    {
-
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "16.8.1.0")]
+    internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
+        
         private static Settings defaultInstance = ((Settings)(global::System.Configuration.ApplicationSettingsBase.Synchronized(new Settings())));
-
-        public static Settings Default
-        {
-            get
-            {
+        
+        public static Settings Default {
+            get {
                 return defaultInstance;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("C:\\Users\\tpaul\\source\\repos\\BoehmTester\\BoehmTrader\\bin\\Debug\\suna.exe")]
+        public string ProcessLocation {
+            get {
+                return ((string)(this["ProcessLocation"]));
+            }
+            set {
+                this["ProcessLocation"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("C:\\Users\\tpaul\\AppData\\Local\\BoehmTrader\\BoehmTrader\\1.0.0.0")]
+        public string InfoFilesLocation {
+            get {
+                return ((string)(this["InfoFilesLocation"]));
+            }
+            set {
+                this["InfoFilesLocation"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("AuthorizationDatas.xml")]
+        public string AuthInfoFilename {
+            get {
+                return ((string)(this["AuthInfoFilename"]));
+            }
+            set {
+                this["AuthInfoFilename"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("BoehmTraderDatabase.db")]
+        public string DbFilename {
+            get {
+                return ((string)(this["DbFilename"]));
+            }
+            set {
+                this["DbFilename"] = value;
             }
         }
     }

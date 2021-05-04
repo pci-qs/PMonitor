@@ -1,7 +1,18 @@
 ﻿<?xml version='1.0' encoding='utf-8'?>
-<SettingsFile xmlns="uri:settings" CurrentProfile="(Default)">
-  <Profiles>
-    <Profile Name="(Default)" />
-  </Profiles>
-  <Settings />
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="ProcessMonitorUI.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="ProcessLocation" Type="System.String" Scope="User">
+      <Value Profile="(Default)">C:\Users\tpaul\source\repos\BoehmTester\BoehmTrader\bin\Debug\suna.exe</Value>
+    </Setting>
+    <Setting Name="InfoFilesLocation" Type="System.String" Scope="User">
+      <Value Profile="(Default)">C:\Users\tpaul\AppData\Local\BoehmTrader\BoehmTrader\1.0.0.0</Value>
+    </Setting>
+    <Setting Name="AuthInfoFilename" Type="System.String" Scope="User">
+      <Value Profile="(Default)">AuthorizationDatas.xml</Value>
+    </Setting>
+    <Setting Name="DbFilename" Type="System.String" Scope="User">
+      <Value Profile="(Default)">BoehmTraderDatabase.db</Value>
+    </Setting>
+  </Settings>
 </SettingsFile>

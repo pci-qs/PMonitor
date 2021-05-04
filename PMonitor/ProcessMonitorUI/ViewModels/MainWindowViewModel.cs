@@ -14,6 +14,7 @@ using ProcessMonitorUI.Models;
 using PMonitor.Core;
 using System.Diagnostics;
 using System.Collections.ObjectModel;
+using System.Threading;
 
 namespace ProcessMonitorUI.ViewModels
 {
@@ -39,10 +40,10 @@ namespace ProcessMonitorUI.ViewModels
         #endregion
 
         #region Private fields
-        private string _processLocation = @"C:\Users\tpaul\source\repos\BoehmTester\BoehmTrader\bin\Debug\BoehmTrader.exe";
-        private string _infoFilesLocation = @"C:\Users\tpaul\AppData\Local\BoehmTrader\BoehmTrader\1.0.0.0";
-        private string _authInfoFilename = "AuthorizationDatas.xml";
-        private string _dbFilename = "BoehmTraderDatabase.db";
+        private string _processLocation;
+        private string _infoFilesLocation;
+        private string _authInfoFilename;
+        private string _dbFilename;
 
         private bool _monitoringStarted = false;
 
@@ -54,6 +55,8 @@ namespace ProcessMonitorUI.ViewModels
 
         public MainWindowViewModel()
         {
+            RetreiveSettings();
+
             LogTexts = new ObservableCollection<string>();
             string authFilename = Path.Combine(_infoFilesLocation, _authInfoFilename);
             if (!UpdateAuthorizationData())
@@ -67,7 +70,7 @@ namespace ProcessMonitorUI.ViewModels
             SetProcessLocationCommand = new RelayCommand(OnSetProcessLocation);
 
             _monitoringTimer = new DispatcherTimer();
-            _monitoringTimer.Interval = new TimeSpan(0, 0, 1);
+            _monitoringTimer.Interval = new TimeSpan(0, 0, 30);
             _monitoringTimer.Tick += _monitoringTimer_Tick;
 
             AddLog("Monitor Program started");
@@ -86,6 +89,7 @@ namespace ProcessMonitorUI.ViewModels
                     UpdateAuthorizationData();
                 }
             }
+            SaveSettings();
         }
 
         private bool UpdateAuthorizationData()
@@ -160,6 +164,7 @@ namespace ProcessMonitorUI.ViewModels
                     AddLog("Process Location changed as " + _processLocation);                    
                 }
             }
+            SaveSettings();
         }
         private void _monitoringTimer_Tick(object sender, EventArgs e)
         {
@@ -180,6 +185,21 @@ namespace ProcessMonitorUI.ViewModels
             Process.Start(_processLocation);
         }
 
+        private void RetreiveSettings()
+        {
+            _processLocation = Properties.Settings.Default.ProcessLocation;
+            _infoFilesLocation = Properties.Settings.Default.InfoFilesLocation;
+            _authInfoFilename = Properties.Settings.Default.AuthInfoFilename;
+            _dbFilename = Properties.Settings.Default.DbFilename;
+        }
+        private void SaveSettings()
+        {
+            Properties.Settings.Default.ProcessLocation = _processLocation;
+            Properties.Settings.Default.InfoFilesLocation = _infoFilesLocation;
+            Properties.Settings.Default.AuthInfoFilename = _authInfoFilename;
+            Properties.Settings.Default.DbFilename = _dbFilename;
+            Properties.Settings.Default.Save();
+        }
         protected void OnPropertyChanged([CallerMemberName] string name = null)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
